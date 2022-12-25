@@ -109,9 +109,10 @@ function registerTerminalCommands(_curState, dispatch) {
         return;
     }
 
-    function clearFn(args,terminal){
-        terminal.outputLines=[];
+    function clearFn(args, terminal) {
+        terminal.outputLines = [];
         terminal.subscribe();
+        return;
     }
 
     myTerminal.addCommand(createCommand("cd", 1, cd));
@@ -121,7 +122,7 @@ function registerTerminalCommands(_curState, dispatch) {
     myTerminal.addCommand(createCommand("pwd", 0, pwd));
     myTerminal.addCommand(createCommand("rm", 1, rm));
     myTerminal.addCommand(createCommand('history', 0, history))
-    myTerminal.addCommand(createCommand('cls',0,clearFn));
+    myTerminal.addCommand(createCommand('cls', 0, clearFn));
 }
 
 
@@ -204,7 +205,7 @@ const Terminal = () => {
                     if (e.key !== 'Enter') return;
                     myTerminal.setUserInput(e.target.value);
                     myTerminal.processUserInput();
-                    e.target.value='';
+                    e.target.value = '';
                 }} /></div>
     </>
 }
