@@ -1,9 +1,9 @@
 import './App.css';
-import AppRoute from './Route';
+import Terminal from './terminal';
 function App() {
   return (
     <>
-      <AppRoute />
+      <Terminal />
     </>
   );
 }
